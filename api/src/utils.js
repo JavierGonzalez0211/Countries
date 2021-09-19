@@ -8,24 +8,23 @@ async function findAllDB(name, page, orderby, direction){
     let limit;
     let min = 9;
     let max = 10;
-    let start;
+    let skip;
 
     if (page ===1){
         limit = min
-        start = 0
+        skip = 0
     }else{
         limit = max
-        start = ((page-1) * limit)-1
+        skip = ((page-1) * limit)-1
     }
         
     let conditions = {attributes:["countryId", "name", "flag", "continent", "population"], 
-    include:[{model: Activity, attributes: ['name', 'id' ], through:{attributes:[]}}], offset:start, limit,
+    include:[{model: Activity, attributes: ['name', 'id' ], through:{attributes:[]}}], offset:skip, limit,
     order: [[orderby, direction]]
     };
     if (name){
         conditions = {where:{name:{[Op.iLike]:`%${name}%`}},...conditions}
     }
-    console.log('conditionsssss ', conditions);
     let result = await Country.findAndCountAll(conditions)
     let pages = Number.parseInt(result.count/max)+1
     result = {pages, ...result}
