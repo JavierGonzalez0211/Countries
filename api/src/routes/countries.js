@@ -1,33 +1,46 @@
 const { Router } = require('express');
 const axios = require ('axios')
 const {Country, Activity, Op} = require ('../db')
+const {findAllDB, order} = require ('../utils')
 
 const router = Router();
 
 router.get('/', async (req,res)=>{
-    let {name} = req.query;
+    let {name, page} = req.query;
     
     try{
+      
+    let countriesAll = await findAllDB(name, page)
+    
+        countriesAll.rows.length?
+        res.status(200).json(countriesAll):
+        res.status(404).send('Country not found with those parameters')
 
-        let countriesAll = await Country.findAll();
-        name?
-        result = countriesAll.filter(e => e.name.toLowerCase().includes(name.toLowerCase())):
-        result = countriesAll
-        result.length?
-        res.json(result):
-        res.send('Country not found')
+        
     }catch(e){
-        // console.log ('ERROR ', e)
-        res.send ('error: ', e)
+        console.log ('ERROR ', e)
+        res.json ({'error: ': error})
     }
     
+})
+
+router.get('/order', async (req,res)=>{
+    let {name,page, orderby, direction} = req.query;
+    try{
+        let data = await order (name,page, orderby, direction);
+        res.json (data)
+    }catch (error){
+        console.log ('ERROR ', error)
+        res.json ({'error: ': error})
+    }
+
 })
 
 router.get('/:idPais', async (req, res) =>{
     const {idPais}= req.params;
     
     try{
-        let country = await Country.findByPk(idPais, {include: Activity})
+        let country = await Country.findByPk(idPais, {include: [{model:Activity, attributes: ['name', 'id' ], through:{attributes:[]}}]})
         // console.log(country);
         res.json(country)
     }catch(e){
