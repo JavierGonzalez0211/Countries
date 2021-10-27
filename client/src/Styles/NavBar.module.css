@@ -1,0 +1,88 @@
+@font-face{
+    font-family: Roboto-bold;
+    src: url(../fonts/Roboto/Roboto-Bold.ttf);
+    
+}
+@font-face{
+    font-family: Roboto-regular;
+    src: url(../fonts/Roboto/Roboto-Regular.ttf);
+    
+}
+@font-face{
+    
+    font-family: Gluten-VariableFont_wght;
+    src: url(../fonts/Gluten/Gluten-VariableFont_wght.ttf);
+    
+}
+
+.NavBar{
+    /* font-family:Roboto-regular ; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: rgb(0 0 0 / 80%); */
+}
+
+h1{
+    font-family: Gluten-VariableFont_wght;
+    color:white;
+    margin-left: 10px;
+
+}
+
+/* .link{
+    font-family:Roboto-bold ;
+    color:#018f18
+} */
+
+.link{
+    font-family:Roboto-bold ;
+    background-color :#018f18;
+    color: white;
+    border-radius: 4px;
+    border: solid 1px white;
+}
+
+.link:hover{
+    background-color: white;
+    color: #018f18;
+    border: solid 1px #018f18;
+}
+
+.search button{
+    font-family: Roboto-bold;
+    border-radius: 4px;
+    border: solid 1px white;
+    background-color: transparent;
+}
+
+.search button:hover{
+    background-color: white;
+    color: rgb(0 0 0 / 80%);
+}
+
+.search input{
+    /* -webkit-appearance: none; */
+    font-family: Roboto-regular;
+    /* font-size: 10px; */
+    border-radius: 4px;
+    margin-right: 4px;
+    border: solid 1px white;
+    color: rgb(0 0 0 / 60%);
+    /* color: white; */
+    background-color: wheat;
+}
+
+.reload{
+    margin-right: 10px;
+    font-family: Roboto-bold;
+    border-radius: 4px;
+    border: solid 1px white;
+    background-color: crimson;
+}
+
+.reload:hover{
+    border: solid 1px crimson;
+    background-color: white;
+    color: crimson;
+}

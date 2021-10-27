@@ -1,0 +1,23 @@
+
+
+
+.cards{
+    /* background-color:#0000008f; */
+    /* alternative color
+    background-color: #e543056e; */
+    /* min-height: 100vh; */
+    display: grid;
+    padding: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3 0.7fr);
+    gap: 20px 30px;
+    grid-template-areas: 
+    ". . ."
+    ". . ."
+    ". . .";
+   
+}
+
+/* .cardsContainer{
+    display: flex;
+} */

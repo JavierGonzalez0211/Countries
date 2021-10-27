@@ -1,6 +1,6 @@
 const { Router } = require('express');
-// const {Country, Activity} = require('../db.js');
 const {Country, Activity, Op} = require ('../db')
+const {allActivities} = require ('../utils')
 
 
 const router = Router();
@@ -9,14 +9,6 @@ router.post('/', async (req,res)=>{
     const {name, difficulty, duration, season, countries} = req.body
     try{
         
-    // let activity = await Activity.create({
-    //     name,
-    //     difficulty,
-    //     duration,
-    //     season
-    // })
-    // await activity.setCountries(countries)
-
 let [activity, created] = await Activity.findOrCreate({
         where:{
             name,
@@ -35,6 +27,23 @@ let [activity, created] = await Activity.findOrCreate({
     console.log(e)
     res.json({'error: ': e})
 }
+})
+
+router.get('/', async (req,res)=>{
+    try{
+      
+    let getAllActivities = await allActivities()
+    
+    getAllActivities?.length?
+        res.status(200).json(getAllActivities):
+        res.status(404).send('there is no activities created')
+
+        
+    }catch(e){
+        console.log ('ERROR ', e)
+        res.json ({'error: ': error})
+    }
+    
 })
 
 

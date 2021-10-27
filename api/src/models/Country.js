@@ -6,7 +6,6 @@ module.exports = (sequelize) => {
   sequelize.define('country', {
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     countryId:{
       type: DataTypes.STRING,
