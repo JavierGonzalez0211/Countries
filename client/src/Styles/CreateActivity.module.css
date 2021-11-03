@@ -23,6 +23,35 @@
 *{
     color: white;
 }
+
+
+.Container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 10px;
+    
+}
+
+
+.Container:before{
+    background-image: url(../images/map1-cut.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    content: "";
+    width: 100%;
+    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+    z-index: -1;
+}
+
 input, select{
     background-color: #56565870;
     border-radius: 4px;
@@ -31,21 +60,14 @@ input, select{
 
 }
 
-
-.Container{
-    background-color: #0000008f;
-    background-image: url(../images/map1-2.jpg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-size: cover;
-	background-repeat: no-repeat;
-    /* position: relative; */
+.selectCountry{
+    max-width: 95%;
 }
 
+
+
 .cont{
-    /* background-color: rgb(0 0 0 / 80%); */
+    
     background-color: rgb(0 0 0 / 95%);
     height: 75%;
     width: 30%;
@@ -88,7 +110,6 @@ input, select{
     border-radius: 4px;
     padding-top: 1%;
     padding-bottom: 1%;
-    /* font-family: Roboto-bold; */
     font-family: NotoSans_bold ;
 }
 
@@ -108,8 +129,7 @@ input, select{
     background-color: crimson;
     width: 20%;
     border: 2px solid white;
-    border-radius: 4px;
-    /* padding-bottom: 10px; */
+    border-radius: 4px;    
     margin-bottom: 10px;
     margin-right: 10px;
     padding-top: 1%;

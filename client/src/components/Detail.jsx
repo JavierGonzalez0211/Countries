@@ -33,33 +33,33 @@ export default function Detail (id){
                 <img src={data.flag} alt="flag" />
             </li>
             <li>
-                <p>Country:</p>
-                <h3>{data.name}</h3>             
+                <p className= {sty.label}>Country:</p>
+                <h3 className= {sty.content}>{data.name}</h3>             
             </li>
             <li>
-            <p>Country Id:</p>
-            <h4>{data.countryId}</h4>
+            <p className= {sty.label}>Country Id:</p>
+            <h4 className= {sty.content}>{data.countryId}</h4>
             </li>
             <li>
-            <p>Capital:</p>
-            <h4>{data.capital}</h4>
+            <p className= {sty.label}>Capital:</p>
+            <h4 className= {sty.content}>{data.capital}</h4>
             </li>
             
             <li>
-                <p>Continent:</p>
-               <h4>{data.continent}</h4> 
+                <p className= {sty.label}>Continent:</p>
+               <h4 className= {sty.content}>{data.continent}</h4> 
             </li>
             <li>
-            <p>Subregion:</p>
-                <h4>{data.subregion}</h4>
+            <p className= {sty.label}>Subregion:</p>
+                <h4 className= {sty.content}>{data.subregion}</h4>
             </li>
             <li>
-            <p>Area:</p>
-            <h4>{sep_area} Km2</h4>
+            <p className= {sty.label}>Area:</p>
+            <h4 className= {sty.content}>{sep_area} Km2</h4>
             </li>
             <li>
-            <p>Population:</p>
-            <h4>{sep_pop}</h4>
+            <p className= {sty.label}>Population:</p>
+            <h4 className= {sty.content}>{sep_pop}</h4>
             </li>
 
             </ul>
@@ -70,20 +70,20 @@ export default function Detail (id){
                 return(
                     <ul className={sty.activity} key = {e.id}>
                     <li>
-                    <p>Activity name:</p>
-                    <h3>{e.name}</h3>
+                    <p className= {sty.label}>Activity name:</p>
+                    <h3 className= {sty.content}>{e.name}</h3>
                     </li>
                     <li>
-                    <p>Difficulty:</p>
-                    <h3>{e.difficulty}</h3>
+                    <p className= {sty.label}>Difficulty:</p>
+                    <h3 className= {sty.content}>{e.difficulty}</h3>
                     </li>
                     <li>
-                    <p>Duration:</p>
-                    <h3>{e.duration}</h3>
+                    <p className= {sty.label}>Duration:</p>
+                    <h3 className= {sty.content}>{e.duration}</h3>
                     </li>
                     <li>
-                    <p>Season:</p>
-                    <h3>{e.season}</h3>
+                    <p className= {sty.label}>Season:</p>
+                    <h3 className= {sty.content}>{e.season}</h3>
                     </li>
                     
                     </ul>
@@ -91,9 +91,8 @@ export default function Detail (id){
             )})}
             </ul>
             </div>
-        {/* </ul> */}
         <div className={sty.btn}>
-            <button onClick={handleOnclick}>Close</button>
+            <button  onClick={handleOnclick}>Close</button>
         </div>
     </div>
 )}

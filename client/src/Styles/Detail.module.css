@@ -75,6 +75,10 @@ li{
     border: 1px solid white;
 }
 
+.activities h1{
+    font-size: 1.4em;
+}
+
 .img{
     display: flex;
     justify-content: center;
@@ -85,7 +89,7 @@ li{
     width: 90%;
 }
 
-p, span{
+.label{
     margin: 0px;
     margin-right: 10px;
     
@@ -94,7 +98,7 @@ p, span{
     justify-content: end;
 }
 
-h3, h4{
+.content{
     margin: 0px;
     width: 50%;
     display: flex;
@@ -105,13 +109,13 @@ h3, h4{
     z-index: 1;
 }
 
-button{
+.btn button{
     background-color: crimson;
     border: 2px solid white;
     border-radius: 4px;
 }
 
-button:hover{
+.btn button:hover{
     color: crimson;
     font-weight: 700;
     background-color: white;
