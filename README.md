@@ -36,9 +36,9 @@ Se pueden realizar búsquedas y filtros tanto por nombre de país como por activ
 - [ ] Redux
 
 
-#### English
+## English
 
-## Descripción del Proyecto
+## Proyect description
 
 This application makes queries to its own database and has information on approximately 250 countries, flag, region, number of population among others. 
 This information was obtained through a query to the external API https://restcountries.com
