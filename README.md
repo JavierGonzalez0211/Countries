@@ -1,9 +1,13 @@
 
 # Individual Project - Around the World!
 
-<p align="left">
-  <img height="200" src="./countries.png" />
+<p align="center">
   <img height="200" src="./picture1.png" />
+  <img height="200" src="./picture.png" />
+</p>
+<p align="center">
+  <img height="200" src="./picture3.png" />
+  <img height="200" src="./picture4.png" />
 </p>
 
 ## Español
