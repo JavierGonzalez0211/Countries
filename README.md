@@ -3,6 +3,7 @@
 
 <p align="left">
   <img height="200" src="./countries.png" />
+  <img height="200" src="./picture1.png" />
 </p>
 
 ## Español
