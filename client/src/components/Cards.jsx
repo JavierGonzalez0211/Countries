@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector} from 'react-redux'
 import Card from './Card';
-import Pagination from "./Pagination";
 import sty from '../Styles/Cards.module.css'
 
 
