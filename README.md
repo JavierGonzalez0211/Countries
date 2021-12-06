@@ -3,7 +3,7 @@
 
 <p align="center">
   <img height="200" src="./picture1.png" />
-  <img height="200" src="./picture.png" />
+  <img height="200" src="./picture2.png" />
 </p>
 <p align="center">
   <img height="200" src="./picture3.png" />
