@@ -1,145 +1,70 @@
 
-# Individual Project - Countries
+# Individual Project - Around the World!
 
 <p align="left">
   <img height="200" src="./countries.png" />
 </p>
 
-## Objetivos del Proyecto
+## Español
 
-- Construir una App utlizando React, Redux, Node y Sequelize.
-- Afirmar y conectar los conceptos aprendidos en la carrera.
-- Aprender mejores prácticas.
-- Aprender y practicar el workflow de GIT.
-- Usar y practicar testing.
+## Descripción del Proyecto
+
+Esta aplicacion realiza consultas a una base de datos propia y tiene informacion sobre 250 paises aproimadamente,  bandera, región, cantidad de población entre otros.
+Esta información fue obtenida mediante una consulta a la API externa https://restcountries.com
+
+También tiene la posibilidad de agregarle actgividades turísticas a los mismos con los siguientes datos: nombre de la actividad, duración, dificultad y temporada.
+Se pueden realizar búsquedas y filtros tanto por nombre de país como por actividades turísticas, cantidad de población y continente 
 
 
-## BoilerPlate
 
-El boilerplate cuenta con dos carpetas: `api` y `client`. En estas carpetas estará el código del back-end y el front-end respectivamente.
+#### Tecnologías utilizadas:
 
-En `api` crear un archivo llamado: `.env` que tenga la siguiente forma:
+#### Back End
+- [ ] Node JS
+- [ ] Express JS
+- [ ] Sequelize
+- [ ] Base de datos PostgreSQL
+- [ ] PGAdmin
+- [ ] Thunder Client
 
-```
-DB_USER=usuariodepostgres
-DB_PASSWORD=passwordDePostgres
-DB_HOST=localhost
-```
-
-Reemplazar `usuariodepostgres` y `passwordDePostgres` con tus propias credenciales para conectarte a postgres. Este archivo va ser ignorado en la subida a github, ya que contiene información sensible (las credenciales).
-
-Adicionalmente será necesario que creen desde psql una base de datos llamada `countries`
-
-El contenido de `client` fue creado usando: Create React App.
-
-## Enunciado
-
-La idea general es crear una aplicación en la cual se pueda ver información de  distintos paises utilizando la api externa [restcountries](https://restcountries.eu/) y a partir de ella poder, entre otras cosas:
-
-  - Buscar paises
-  - Filtrarlos / Ordenarlos
-  - Crear actividades turísticas
-
-__IMPORTANTE__: Para las funcionalidades de filtrado y ordenamiento NO pueden utilizar los endpoints de la API externa que ya devuelven los resultados filtrados u ordenados sino que deben realizarlo ustedes mismos. En particular alguno de los ordenamientos o filtrados debe si o si realizarse desde el frontend.
-
-### Únicos Endpoints/Flags que pueden utilizar
-
-  - GET https://restcountries.eu/rest/v2/all
-  - GET https://restcountries.eu/rest/v2/name/{name}
-  - GET https://restcountries.eu/rest/v2/alpha/{code}
-
-### Requerimientos mínimos:
-
-A continuación se detallaran los requerimientos mínimos para la aprobación del proyecto individial. Aquellos que deseen agregar más funcionalidades podrán hacerlo. En cuanto al diseño visual no va a haber wireframes ni prototipos prefijados sino que tendrán libertad de hacerlo a su gusto pero tienen que aplicar los conocimientos de estilos vistos en el curso para que quede agradable a la vista.
-
-__IMPORTANTE__: No se permitirá utilizar librerías externas para aplicar estilos a la aplicación. Tendrán que utilizar CSS con algunas de las opciones que vimos en dicha clase (CSS puro, CSS Modules o Styled Components)
-
-#### Tecnologías necesarias:
-- [ ] React
-- [ ] Redux
-- [ ] Express
-- [ ] Sequelize - Postgres
 
 #### Frontend
-
-Se debe desarrollar una aplicación de React/Redux que contenga las siguientes pantallas/rutas.
-
-__Pagina inicial__: deben armar una landing page con
-- [ ] Alguna imagen de fondo representativa al proyecto
-- [ ] Botón para ingresar al home (`Ruta principal`)
-
-__Ruta principal__: debe contener
-- [ ] Input de búsqueda para encontrar países por nombre
-- [ ] Área donde se verá el listado de países. Al iniciar deberá cargar los primeros resultados obtenidos desde la ruta `GET /countries` y deberá mostrar su:
-  - Imagen de la bandera
-  - Nombre
-  - Continente
-- [ ] Botones/Opciones para filtrar por continente y por tipo de actividad turística
-- [ ] Botones/Opciones para ordenar tanto ascendentemente como descendentemente los países por orden alfabético y por cantidad de población
-- [ ] Paginado para ir buscando y mostrando los siguientes paises, 10 paises por pagina, mostrando los primeros 9 en la primer pagina.
-
-__Ruta de detalle de país__: debe contener
-- [ ] Los campos mostrados en la ruta principal para cada país (imagen de la bandera, nombre, código de país de 3 letras y continente)
-- [ ] Código de país de 3 letras (id)
-- [ ] Capital
-- [ ] Subregión
-- [ ] Área (Mostrarla en km2 o millones de km2)
-- [ ] Población
-- [ ] Actividades turísticas con toda su información asociada
-
-__Ruta de creación de actividad turística__: debe contener
-- [ ] Un formulario __controlado__ con los siguientes campos
-  - Nombre
-  - Dificultad
-  - Duración
-  - Temporada
-- [ ] Posibilidad de seleccionar/agregar varios países en simultaneo
-- [ ] Botón/Opción para crear una nueva actividad turística
-
-#### Base de datos
-
-El modelo de la base de datos deberá tener las siguientes entidades (Aquellas propiedades marcadas con asterísco deben ser obligatorias):
-
-- [ ] País con las siguientes propiedades:
-  - ID (Código de 3 letras) *
-  - Nombre *
-  - Imagen de la bandera *
-  - Continente *
-  - Capital *
-  - Subregión
-  - Área
-  - Población
-- [ ] Actividad Turística con las siguientes propiedades:
-  - ID
-  - Nombre
-  - Dificultad (Entre 1 y 5)
-  - Duración
-  - Temporada (Verano, Otoño, Invierno o Primavera)
-
-La relación entre ambas entidades debe ser de muchos a muchos ya que un país puede contener varias actividades turísticas y, a su vez, una actividad turística puede darse en múltiples países. Por ejemplo una actividad podría ser "Ski" que podría ocurrir en Argentina y también en Estados Unidos, pero a su vez Argentina podría también incluir "Rafting".
-
-#### Backend
-
-Se debe desarrollar un servidor en Node/Express con las siguientes rutas:
-
-__IMPORTANTE__: No está permitido utilizar los filtrados, ordenamientos y paginados brindados por la API externa, todas estas funcionalidades tienen que implementarlas ustedes.
-
-- [ ] __GET /countries__:
-  - En una primera instancia deberán traer todos los países desde restcountries y guardarlos en su propia base de datos y luego ya utilizarlos desde allí (Debe almacenar solo los datos necesarios para la ruta principal)
-  - Obtener un listado de los paises.
-- [ ] __GET /countries/{idPais}__:
-  - Obtener el detalle de un país en particular
-  - Debe traer solo los datos pedidos en la ruta de detalle de país
-  - Incluir los datos de las actividades turísticas correspondientes
-- [ ] __GET /countries?name="..."__:
-  - Obtener los países que coincidan con el nombre pasado como query parameter (No necesariamente tiene que ser una matcheo exacto)
-  - Si no existe ningún país mostrar un mensaje adecuado
-- [ ] __POST /activity__:
-  - Recibe los datos recolectados desde el formulario controlado de la ruta de creación de actividad turística por body
-  - Crea una actividad turística en la base de datos
+- [ ] HTML
+- [ ] CSS3
+- [ ] JavaScript
+- [ ] React
+- [ ] Redux
 
 
-#### Testing
-- [ ] Al menos tener un componente del frontend con sus tests respectivos
-- [ ] Al menos tener una ruta del backend con sus tests respectivos
-- [ ] Al menos tener un modelo de la base de datos con sus tests respectivos
+## English
+
+## Project description
+
+This application makes queries to its own database and has information on approximately 250 countries, flag, region, number of population among others. 
+This information was obtained through a query to the external API https://restcountries.com
+
+You also have the possibility of adding tourist activities to them with the following information: name of the activity, duration, difficulty and season.
+Searches and filters can be carried out both by country name and by tourist activities, number of population and continent
+
+
+#### Tecnologíes:
+
+#### Back End
+- [ ] Node JS
+- [ ] Express JS
+- [ ] Sequelize
+- [ ] Base de datos PostgreSQL
+- [ ] PGAdmin
+- [ ] Thunder Client
+
+
+#### Frontend
+- [ ] HTML
+- [ ] CSS3
+- [ ] JavaScript
+- [ ] React
+- [ ] Redux
+
+#### Author: Edgardo Javier González
+
+
