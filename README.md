@@ -14,10 +14,10 @@
 
 ## Descripción del Proyecto
 
-Esta aplicacion realiza consultas a una base de datos propia y tiene informacion sobre 250 paises aproimadamente,  bandera, región, cantidad de población entre otros.
+Esta aplicacion realiza consultas a una base de datos propia y tiene informacion sobre 250 paises aproximadamente,  bandera, región, cantidad de población entre otros.
 Esta información fue obtenida mediante una consulta a la API externa https://restcountries.com
 
-También tiene la posibilidad de agregarle actgividades turísticas a los mismos con los siguientes datos: nombre de la actividad, duración, dificultad y temporada.
+También tiene la posibilidad de agregarle actividades turísticas a los mismos con los siguientes datos: nombre de la actividad, duración, dificultad y temporada.
 Se pueden realizar búsquedas y filtros tanto por nombre de país como por actividades turísticas, cantidad de población y continente 
 
 
